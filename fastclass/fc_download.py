@@ -190,22 +190,6 @@ def main(
             source_urls = crawl(raw_folder, search_term, maxnum, crawlers=crawler)
             remove_dups(raw_folder)
 
-            # resize
-            out_resized = os.path.join(outpath, out_name)
-            os.makedirs(out_resized, exist_ok=True)
-
-            files = sorted(glob.glob(raw_folder + "/*"))
-
-            source_urls = resize(
-                files, outpath=out_resized, size=SIZE, urls=source_urls
-            )
-
-            # write report file
-            with open(out_resized + ".log", "w", encoding="utf-8") as log:
-                log.write("image,source\n")
-                for item in source_urls:
-                    log.write(",".join([item, source_urls[item]]) + "\n")
-
         if keep:
             shutil.copytree(tmp, outpath + ".raw")
 
