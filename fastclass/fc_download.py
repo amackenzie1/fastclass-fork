@@ -191,7 +191,7 @@ def main(
             remove_dups(raw_folder)
 
         if keep:
-            shutil.copytree(tmp, outpath + ".raw")
+            shutil.copytree(tmp, outpath)
 
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
