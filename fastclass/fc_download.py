@@ -165,7 +165,7 @@ def main(
         else:
             exit(-1)
 
-    os.makedirs(outpath)
+    #os.makedirs(outpath)
     print(f"INFO: final dataset will be located in {outpath}")
 
     with tempfile.TemporaryDirectory() as tmp:
